@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Expert</title>
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='cssFiles/main_page.css') }}">
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+    <div class="container">
+        <div class="gif">
+            <img class="gif-brain" src="{{ url_for('static', filename='assest/giphy.gif') }}" alt="not found">
+           </div>
+        <div class="header">
+            <h1 class="h1">Expert system</h1>
+        </div>
+
+        <div class="game">
+
+            <h2>WHICH ANXIETY TYPE DO YOU HAVE? <span id="user-choice"></span></h2>
+            <div class="questions">
+                The aim of our project is to create an expert system that informs the user about which type of anxiety and how much by asking specific questions. <br>
+                The questions asked to the user were formed as a result of an interview with an expert. <br>
+                Users answer questions through the interface. When the questions are completed, the expert system displays the ratio the user has for each anxiety type. <br>
+
+            </div>
+            <div class='buttons'>
+               
+                <a href="/question_page"> <button class="btn" id="rock" data-choice="Okay">START</button></a>
+                
+         
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Expert</title>
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='cssFiles/question_page.css') }}">
+    <link rel="icon" href="data:,">
+
+
+</head>
+
+<body>
+    <div id="kutu">
+        <div class="döndür Beyaz topLeft" ><img src="{{ url_for('static', filename='assest/1-.png') }}"  alt="not found"></div>
+        <div class="döndür KapaliRenk topRight" ><img src="{{ url_for('static', filename='assest/2-.png') }}"  alt="not found"></div>
+        <div class="döndür AçikRenk bottomLeft"><img src="{{ url_for('static', filename='assest/3-.png') }}"  alt="not found"></div>
+        <div class="döndür Beyaz bottomRight" ><img src="{{ url_for('static', filename='assest/4-.png') }}"  alt="not found"></div>
+      </div>
+    <div class="container">
+
+        <div class="game">
+
+            <div class="questions"> 
+                <script src="{{ url_for('static', filename='jsonFiles/fetchData.js') }}"></script>
+
+
+                {% if finish == "False" : %}
+                <p class="question" id="questionArea"></p>
+                <div class="buttons" id="answerArea">
+                </div>
+                {% else : %}
+                <p class="done"> YOUR QUESTIONS ARE DONE</p>
+                <div class='buttons'>               
+                    <a href="/result_page"> <button class="btn" id="rock" data-choice="Okay">SHOW RESULT</button></a>        
+                </div> 
+                {% endif %}
+
+            </div>      
+        </div>
+    </div>
+   
+</body>
+
+<script>
+    var htmlBlock_ques=  '{{question}}'
+    document.getElementById("questionArea").innerHTML = htmlBlock_ques;
+
+    var htmlBlock_area =   
+                    '<form method="POST">'   +                           
+                    '<a href="/question_page"> <button class="btn"  name="ans" value="yes" >YES</button></a>'    +    
+                    '<a href="/question_page"> <button class="btn"  name="ans" value="no" >NO</button></a>'  +
+                    '</form>';
+    
+    document.getElementById("answerArea").innerHTML = htmlBlock_area;
+
+
+</script>
