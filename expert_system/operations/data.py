@@ -1,6 +1,6 @@
 import json
 
-with open('static\jsonFiles\knowledge.json') as f:
+with open('static/jsonFiles/knowledge.json') as f:
   veri = json.load(f)
   
 
