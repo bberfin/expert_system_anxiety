@@ -20,6 +20,8 @@ class Inference:
     thePercentageList=list()
     global theNameList
     theNameList=list()
+    global advice
+    advice=list()
     
     """
     Inference parses the input files and creates KnowledgeBase and ClauseBase that can be
@@ -179,16 +181,21 @@ class Inference:
 
         if self.__verbose:
             for target, percent in matchesRules.items():
-                Log.d(f"Target :: {target} --->  Matched :: {percent}")  #arayüze gönder!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                #Log.d(f"Target :: {target} --->  Matched :: {percent}")  
                 theNameList.append(target)
                 thePercentageList.append(percent)
-            print()
+            #print()
 
         # returning the first match if it greater than the MIN
         for target, percent in matchesRules.items():
             if percent >= PERCENT_MATCH:
+                advice.append("True")
+                advice.append(target)
+                advice.append(str(percent)+ " % sure")
                 return True, target + " " + str(percent) + " % sure"
             else:
+                advice.append("False")
+                advice.append(target)
                 return False, target
 
 
@@ -199,6 +206,10 @@ def returnPercentageList():
 def returnNameList():
     global theNameList
     return theNameList
+
+def returnAdvice():
+    global advice
+    return advice
 
 
     

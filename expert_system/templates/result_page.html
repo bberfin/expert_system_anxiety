@@ -23,8 +23,11 @@
 
                 {% endfor %}
 
-
-                
+                {% if flag == "True" : %}
+                <p> I think you show symptoms of {{advice_one}}  {{advice_two}} </p><br><br>   
+                {% else : %}
+                <p> {{advice_one}}  </p><br><br>
+                {% endif %}
 
 
             </div>

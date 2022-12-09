@@ -5,8 +5,7 @@ from flask import request, redirect, url_for
 
 from operations.data import takeQuestions
 from operations.writeToCsv import writeToCsv, deleteCsv
-from engine.inference import returnPercentageList
-from engine.inference import returnNameList
+from engine.inference import returnPercentageList,returnNameList,returnAdvice
 from engine.inference import Inference
 
 
@@ -51,6 +50,10 @@ def page_result():
                             method=inferenceEngine.FORWARD)
     percentageData = returnPercentageList()
     nameData = returnNameList()
+    adviceData= returnAdvice()
     global counter
     counter=-1
-    return render_template('result_page.html', data=percentageData,nameData=nameData, dataLen=percentageData.__len__())
+    if(adviceData[0]=="True"):
+        return render_template('result_page.html', data=percentageData,nameData=nameData, dataLen=percentageData.__len__(),advice_one=adviceData[1],advice_two=adviceData[2],flag="True")
+    else:
+        return render_template('result_page.html', data=percentageData,nameData=nameData, dataLen=percentageData.__len__(),advice_one=adviceData[1],flag="False")
