@@ -4,7 +4,7 @@ from flask import render_template
 from flask import request, redirect, url_for
 
 from operations.data import takeQuestions
-from operations.writeToCsv import writeToCsv
+from operations.writeToCsv import writeToCsv, deleteCsv
 from engine.inference import returnPercentageList
 from engine.inference import returnNameList
 from engine.inference import Inference
@@ -19,7 +19,7 @@ clauseBaseFile = "static/jsonFiles/clause.json"
 
 @app.route("/") # Endpoint imizi tanımladık.
 def page_main(): # Bir fonksiyon oluşturduk.
-
+    deleteCsv()
     return render_template('main_page.html') # Sitemizde görmek istediğimiz şeyi return ettik.
 
 @app.route("/question_page", methods=["GET", "POST"])
