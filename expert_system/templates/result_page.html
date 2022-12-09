@@ -18,17 +18,17 @@
 
             <h2>RESULT <span id="user-choice"></span></h2>
             <div class="result">
-                <p> Obsessive Compulsive Disorder (OCD) --->  Matched :: 46.15384615384615 </p><br><br>   
-                <p> Agoraphobia --->  Matched :: 12.5 </p><br><br>
-                <p>Specific Phobias --->  Matched :: 12.5</p><br><br>
-                <p> Post-Travmatic Stress Disorder(PTSD) --->  Matched :: 12.5</p><br><br>
-                <p>Social Anxiety --->  Matched :: 11.11111111111111</p><br><br>
-                <p>Generalized Anxiety Disorder --->  Matched :: 8.333333333333332</p><br><br>
-                <p>Panic Disorder --->  Matched :: 6.666666666666667</p><br><br>
-                <p>I am not sure but you show some signs of Obsessive Compulsive Disorder (OCD) </p><br><br>
-                <p> Hope that you are satisfied with your answers !</p></p><br><br>
-                
+                {% for x in range(dataLen) %}
+                <p> {{nameData[x]}} --->  Matched :: {{data[x]}} </p><br><br>   
 
+                {% endfor %}
+
+
+                {% if flag == "True" : %}
+                <p> I think you show symptoms of {{advice_one}}  {{advice_two}} </p><br><br>   
+                {% else : %}
+                <p> {{advice_one}}  </p><br><br>
+                {% endif %}
 
             </div>
  

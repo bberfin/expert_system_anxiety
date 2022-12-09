@@ -1,0 +1,38 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Expert</title>
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename='cssFiles/add_questions.css') }}">
+    <link rel="icon" href="data:,">
+
+
+</head>
+
+<body>
+    
+    <div class="container">
+        
+        <div class="title">
+            <h2 style="color:rgb(111, 0, 255)">ADD QUESTION</h2><br><br>
+            <p>Here the expert can add questions for the diagnosis</p><br><br>
+        </div>
+      <div class="input">
+        <label for="name" style="background-color: rgb(102, 102, 219);font-style: bold;">Name of the Diagnosis</label>
+        <input type="text" id="name" name="name" style="text-shadow: 16px 6px 4px purple;"><br><br>
+      </div>
+      <div class="rules">
+        <label for="rule" style="background-color: rgb(102, 102, 219); font-style: bold; padding-left: 0px;">Symptoms</label><br><br>
+        <div><input type="text" id="rule" name="rule" style="text-shadow: 16px 6px 4px purple;"><br><br>
+            <input type="text" id="rule" name="rule" style="text-shadow: 16px 6px 4px purple;"><br><br>
+            <input type="text" id="rule" name="rule" style="text-shadow: 16px 6px 4px purple;"><br><br>
+            <input type="text" id="rule" name="rule" style="text-shadow: 16px 6px 4px purple;"><br><br>
+            <input type="text" id="rule" name="rule" style="text-shadow: 16px 6px 4px purple;"><br><br></div>
+
+            <input type="submit" class="submit" value="Submit">
+      </div>
+    </div>
+   
+</body>
