@@ -182,7 +182,7 @@ class Inference:
 
         if self.__verbose:
             for target, percent in matchesRules.items():
-                Log.d(f"Target :: {target} --->  Matched :: {percent}")  #arayüze gönder!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                Log.d(f"Target :: {target} --->  Matched :: {percent}") 
                 theNameList.append(target)
                 thePercentageList.append(percent)
             print()
@@ -195,9 +195,10 @@ class Inference:
                 advice.append(str(percent)+ "% sure")
                 return True, target + " " + str(percent) + " % sure"
             else:
-                advice.append("True")
+                advice.append("False")
                 advice.append(target)
-                return False, target
+                advice.append(str(percent)+ "% sure")
+                return False, target + " " +   str(percent)+ " % sure"
 
 
 def returnPercentageList():

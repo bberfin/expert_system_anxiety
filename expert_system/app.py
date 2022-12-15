@@ -58,7 +58,7 @@ def page_result():
     if(adviceData[0]=="True"):
         return render_template('result_page.html', data=percentageData,nameData=nameData, dataLen=percentageData.__len__(),advice_one=adviceData[1],advice_two=adviceData[2],flag="True")
     else:
-        return render_template('result_page.html', data=percentageData,nameData=nameData, dataLen=percentageData.__len__(),advice_one=adviceData[1],flag="True")
+        return render_template('result_page.html', data=percentageData,nameData=nameData, dataLen=percentageData.__len__(),advice_one=adviceData[1],advice_two=adviceData[2],flag="True")
   
 
 
