@@ -1,14 +1,15 @@
-
 from flask import Flask # flask kütüphanemizi projemize import ettik.
+from flask import send_file 
 from flask import render_template
 from flask import request, redirect, url_for
 
-from operations.data import takeQuestions
+#from operations.writeJson import write_json
+from operations.data import takeQuestions,write_json,write_question_json
 from operations.writeToCsv import writeToCsv,deleteCsv
 from engine.inference import returnPercentageList
 from engine.inference import returnNameList,returnAdvice
 from engine.inference import Inference
-
+import json
 
 app = Flask(__name__) # app değişkenizimizin Flask olduğunu belirttik.
 
@@ -64,4 +65,32 @@ def page_result():
 
 @app.route("/add_questions")
 def page_add_questions(): # Bir fonksiyon oluşturduk.
-    return render_template('add_questions.html') # Sitemizde görmek istediğimiz şeyi return ettik.
+
+ return render_template('add_questions.html') # Sitemizde görmek istediğimiz şeyi return ettik.
+
+@app.route("/registeredData",methods=["post"])
+def page_registeredData(): 
+
+  
+
+    name = request.form['name']
+    r1= request.form['rule1']
+    r2=request.form['rule2']
+    r3= request.form['rule3']
+    r4=request.form['rule4']
+    r5=request.form['rule5']
+    newAnxiety = {"name":name,"rules":{"1":r1,"2":r2,"3":r3,"4":r4,"5":r5} }
+    symptoms = list()
+    symptoms.append(r1)
+    symptoms.append(r2)
+    symptoms.append(r3)
+    symptoms.append(r4)
+    symptoms.append(r5)
+    write_json(newAnxiety) 
+    write_question_json(symptoms)
+    return render_template('registeredData.html',name=name,r1=r1,r2=r2,r3=r3,r4=r4,r5=r5) # Sitemizde görmek istediğimiz şeyi return ettik.
+ 
+
+
+              
+
