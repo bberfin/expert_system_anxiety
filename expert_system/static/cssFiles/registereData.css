@@ -10,10 +10,9 @@ body {
   display: grid;
   place-content: center;
   font-family: "Big Shoulders Display";
-  background: #e9a984;
+  background: #9ceeea;
   overflow: hidden;
 }
-
 @media (max-width: 1000px) {
   body {
     transition: all 400ms;
@@ -26,11 +25,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 41px 41px 82px #e7c597, -41px -41px 82px #ffffff;
+  box-shadow: 41px 41px 82px #bebebe, -41px -41px 82px #ffffff;
   padding: 2em;
   transition: all 400ms;
 }
-
 .container .header {
   text-transform: uppercase;
   letter-spacing: 1.2px;
@@ -39,21 +37,18 @@ body {
   color: #191919;
   font-size: clamp(1em, 1em + 5vw, 1.2em);
 }
-
 .container .game h2 {
   letter-spacing: 1.3px;
   margin-bottom: 1rem;
   font-size: clamp(1.2em, 1em + 5vw, 2em);
 }
-
 .container .game .buttons {
   display: flex;
   margin-top: 2em;
 }
-
 .container .game .buttons button {
   align-items: center;
-  background: linear-gradient(144deg, #d1cb7a, #f34242 50%, #eb5600);
+  background: linear-gradient(144deg, #80dd80, #23c4bc 50%, #3a65db);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border: 0;
   border-radius: 8px;
@@ -69,48 +64,38 @@ body {
   transition: all 400ms;
   text-transform: uppercase;
 }
-
-.container .game .buttons button:hover,
-.container .game .buttons button:active {
-  box-shadow: rgb(252, 65, 65) 0 15px 30px -5px;
+.container .game .buttons button:hover, .container .game .buttons button:active {
+  box-shadow: rgb(152, 65, 252) 0 15px 30px -5px;
   transition: box-shadow 10ms;
 }
-
 .container .game .buttons #reset {
   background: none;
   border: 2px solid rgba(255, 255, 255, 0.845);
   color: #191919;
   font-weight: 600;
 }
-
 .container .game .buttons button:active {
   transform: scale(0.9);
 }
-
 @media (max-width: 730px) {
   .container {
     width: 80%;
     justify-self: center;
     transition: all 400ms;
   }
-
   .container .header h1 {
     font-size: clamp(1em, 1em + 5vw, 1.5em);
   }
-
   .container .game {
     margin-left: 2rem;
   }
-
   .container .game h2 {
     font-size: clamp(1em, 1em + 5vw, 1.5em);
   }
-
   .container .buttons {
     display: grid;
     place-items: center;
   }
-
   .container .buttons button {
     padding: 10px 0 !important;
     font-size: 14px !important;
@@ -118,40 +103,32 @@ body {
     width: 100px !important;
   }
 }
-
 @media (max-width: 500px) {
   .container {
     transition: all 400ms;
   }
-
   .container .game {
     margin-left: 1rem;
   }
-
   .container .game h2 {
     font-size: 1.2rem;
   }
-
   .container .game .buttons button {
     width: 80px !important;
     font-size: 12px !important;
   }
 }
-
 @media (max-width: 420px) {
   .container {
     width: 100%;
     transition: all 400ms;
   }
-
   .container .game {
     margin-left: 0rem !important;
   }
-
   .container .game h2 {
     font-size: 1rem;
   }
-
   .container .game .buttons button {
     width: 80px !important;
     font-size: 10px !important;
@@ -190,26 +167,22 @@ body {
     margin-bottom: 2rem;
   }
 }
-
 @media (max-width: 1000px) {
   .footer {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
 }
-
 @media (max-width: 900px) {
   .footer {
     transition: var(--trans);
   }
 }
-
 @media (max-width: 700px) {
-  .footer {
-    font-size: calc(10vw * .4);
-  }
+     .footer {
+        font-size: calc(10vw * .4);
+    }
 }
-
 .fa-heart {
   color: #920121;
   animation: pulse 1s linear infinite !important;
